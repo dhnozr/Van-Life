@@ -9,6 +9,9 @@ export default {
       backgroundImage: {
         'hero-banner': "url('/image54.jpg')",
       },
+      colors: {
+        'navbar-bg': 'hsl(0 0% 0% / 0.1)',
+      },
     },
   },
   plugins: [],
