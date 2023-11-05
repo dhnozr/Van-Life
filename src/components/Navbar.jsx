@@ -51,9 +51,9 @@ export default function Navbar() {
       </div>
 
       <nav
-        className={`fixed right-0 top-0 bottom-0 left-1/3 py-28 px-20 z-20 bg-navbar-bg text-white translate-x-full ${
-          isOpen && 'translate-x-0'
-        }  backdrop-blur-sm transition-transform duration-500 md:translate-x-0  md:static md:bg-transparent md:py-0 md:px-0`}
+        className={`fixed right-0 top-0 bottom-0 left-1/3 py-28 px-20 z-20 bg-navbar-bg text-white  ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }  backdrop-blur-sm transition-all duration-500 md:translate-x-0  md:static md:bg-transparent md:py-0 md:px-0`}
       >
         <ul
           className={`flex flex-col gap-8 text-2xl md:flex-row md:text-xl md:text-black`}
