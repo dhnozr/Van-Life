@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         ınter: ['Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        'hero-banner': "url('./src/images/image54.jpg')",
+      },
     },
   },
   plugins: [],
