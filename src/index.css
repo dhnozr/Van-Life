@@ -7,4 +7,5 @@
   margin: auto;
   padding: 0 1rem;
   position: relative;
+  min-height: 100vh;
 }
