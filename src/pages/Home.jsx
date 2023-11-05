@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <>
       <div className="bg-hero-banner h-screen max-h-[calc(100vh-104px)] bg-no-repeat bg-center bg-cover">
-        <div className="flex flex-col items-center justify-center gap-10 text-white">
-          <h1 className="text-4xl">
+        <div className="flex h-full flex-col items-center justify-center gap-10 text-white">
+          <h1 className="text-4xl font-extrabold">
             You got the travel plans, we got the travel vans.
           </h1>
           <h2>
