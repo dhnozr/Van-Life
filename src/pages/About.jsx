@@ -7,7 +7,7 @@ export default function About() {
         <div>
           <img
             className="w-full object-cover h-[400px]"
-            src="/src/images/image55.jpg"
+            src="image55.jpg"
             alt=""
           />
         </div>
