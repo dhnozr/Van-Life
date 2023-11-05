@@ -7,7 +7,7 @@ export default {
         ınter: ['Inter', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-banner': "url('image54.jpg')",
+        'hero-banner': "url('/image54.jpg')",
       },
     },
   },
