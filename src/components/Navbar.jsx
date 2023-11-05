@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../images/logog.png';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -19,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center bg-[#FFF7ED] h-16 p-4">
       <div>
-        <img width={150} src={logo} alt="" />
+        <img width={150} src={`logog.png`} alt="" />
       </div>
       <nav>
         <ul className="gap-3 text-lg hidden md:flex">
