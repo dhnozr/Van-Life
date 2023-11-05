@@ -1,5 +1,4 @@
 import React from 'react';
-import heroBanner from '../images/image54.jpg';
 
 export default function Home() {
   return (
