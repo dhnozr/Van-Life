@@ -25,7 +25,7 @@ export default function Vans() {
                   }}
                   transition={{
                     type: 'spring',
-                    delay: 0.6,
+                    delay: 0.3,
                     stiffness: 30,
                   }}
                   className="max-h-96 w-full object-cover"
@@ -51,7 +51,7 @@ export default function Vans() {
               }}
               transition={{
                 stiffness: 30,
-                delay: 0.7,
+                delay: 0.5,
                 type: 'spring',
               }}
               className={`${

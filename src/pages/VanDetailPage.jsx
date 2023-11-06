@@ -37,7 +37,7 @@ export default function VanDetailPage() {
             }}
             transition={{
               type: 'spring',
-              delay: 0.6,
+              delay: 0.3,
               stiffness: 30,
             }}
             className="md:w-full md:h-[600px] md:object-cover md:object-left-bottom "
