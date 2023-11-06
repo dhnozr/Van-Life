@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getVanData } from '../VanData';
 import { Link } from 'react-router-dom';
+import { motion as m } from 'framer-motion';
 
 export default function Vans() {
   const [van, setVan] = useState(getVanData());
@@ -13,7 +14,20 @@ export default function Vans() {
           <div key={van.id}>
             <div>
               <Link to={`/vans/${van.id}`}>
-                <img
+                <m.img
+                  initial={{
+                    opacity: 0,
+                    scale: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  transition={{
+                    type: 'spring',
+                    delay: 0.6,
+                    stiffness: 40,
+                  }}
                   className="max-h-96 w-full object-cover"
                   src={van.imageUrl}
                   alt=""
@@ -26,7 +40,20 @@ export default function Vans() {
                 {van.price}/ <br /> day
               </p>
             </div>
-            <button
+            <m.button
+              initial={{
+                opacity: 0,
+                x: -100,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+              }}
+              transition={{
+                stiffness: 40,
+                delay: 0.6,
+                type: 'spring',
+              }}
               className={`${
                 (van.type === 'simple' && 'bg-[#E17654]') ||
                 (van.type === 'luxury' && 'bg-[#161616]') ||
@@ -34,7 +61,7 @@ export default function Vans() {
               } text-[#FFEAD0] py-1 px-6 rounded-md md:py-2 md:px-8 `}
             >
               {van.type}
-            </button>
+            </m.button>
           </div>
         ))}
       </div>
