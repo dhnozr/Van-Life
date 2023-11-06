@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getVanData } from '../VanData';
+import { Link } from 'react-router-dom';
 
 export default function Vans() {
   const [van, setVan] = useState(getVanData());
@@ -11,11 +12,13 @@ export default function Vans() {
         {van.map(van => (
           <div key={van.id}>
             <div>
-              <img
-                className="max-h-96 w-full object-cover"
-                src={van.imageUrl}
-                alt=""
-              />
+              <Link to={`/vans/${van.id}`}>
+                <img
+                  className="max-h-96 w-full object-cover"
+                  src={van.imageUrl}
+                  alt=""
+                />
+              </Link>
             </div>
             <div className="flex mt-3 justify-between">
               <h3>{van.name}</h3>
