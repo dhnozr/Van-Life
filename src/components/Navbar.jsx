@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center bg-[#FFF7ED] h-16 p-4">
       <div>
-        <img width={150} src={`logog.png`} alt="" />
+        <img width={150} src="/logog.png" alt="" />
       </div>
 
       <div className={`z-40 md:hidden`} style={{}}>
