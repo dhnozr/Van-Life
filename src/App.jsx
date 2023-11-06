@@ -5,6 +5,7 @@ import About from './pages/About';
 import Layout from './Layout';
 import Home from './pages/Home';
 import Vans from './pages/Vans';
+import VanDetailPage from './pages/VanDetailPage';
 import './App.css';
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="vans" element={<Vans />} />
+          <Route path="vans" element={<Vans />}>
+            <Route path=":id" element={<VanDetailPage />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
