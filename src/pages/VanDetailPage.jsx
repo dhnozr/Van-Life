@@ -88,7 +88,7 @@ export default function VanDetailPage() {
           >
             <h2 className="text-xl font-bold">{van?.name}</h2>
             <p className="font-bold text-xl">
-              {van?.price}
+              ${van?.price}
               <span className="font-thin">/day</span>
             </p>
             <p>{van?.description}</p>
