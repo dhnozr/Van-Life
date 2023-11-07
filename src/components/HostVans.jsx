@@ -1,5 +1,6 @@
 import React from 'react';
 import { getVanData } from '../VanData';
+import { Link } from 'react-router-dom';
 
 export default function HostVans() {
   const van = getVanData().splice(0, 3);
@@ -14,9 +15,12 @@ export default function HostVans() {
           {van.map(van => (
             <div className="bg-[#FFF7ED]" key={van.id}>
               <div className="grid mb-2 grid-cols-2 gap-5 p-4 sm:grid-cols-1 sm:max-w-lg sm:m-auto sm:mb-5  bg-white w-full">
-                <div className="bg-white">
-                  <img className="w-44" src={van.imageUrl} alt="" />
-                </div>
+                <Link to={`/host/vans/${van.id}`}>
+                  <div className="bg-white">
+                    <img className="w-44" src={van.imageUrl} alt="" />
+                  </div>
+                </Link>
+
                 <div className="flex items-center justify-between text-sm">
                   <div>
                     <h2>{van.name}</h2>
