@@ -56,8 +56,11 @@ export default function Navbar() {
         }  backdrop-blur-sm transition-all duration-500 md:translate-x-0  md:static md:bg-transparent md:py-0 md:px-0`}
       >
         <ul
-          className={`flex flex-col gap-8 text-2xl md:flex-row md:text-xl md:text-black`}
+          className={`flex flex-col gap-8 text-2xl md:flex-row md:text-lg  md:text-black`}
         >
+          <li>
+            <Link to={`host`}>Host</Link>
+          </li>
           <li>
             <Link to={`/`}>Home</Link>
           </li>
@@ -69,25 +72,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-      {/* Mobile navbar */}
-      {/*  <div className="md:hidden">
-        <button onClick={toogleNavbar}>{isOpen ? <X /> : <Menu />}</button>
-        {isOpen && (
-          <div className="absolute left-4 right-4 h-72">
-            <ul className="bg-black text-white flex basis-full h-full flex-col items-center gap-4 justify-center text-2xl">
-              <li>
-                <Link to={`/`}>Home</Link>
-              </li>
-              <li>
-                <Link to={`about`}>About</Link>
-              </li>
-              <li>
-                <Link to={`vans`}>Vans</Link>
-              </li>
-            </ul>
-          </div>
-        )}
-      </div> */}
     </header>
   );
 }
