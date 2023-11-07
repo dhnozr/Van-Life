@@ -37,7 +37,7 @@ export default function Vans() {
             <div className="flex mt-3 justify-between">
               <h3>{van.name}</h3>
               <p>
-                {van.price}/ <br /> day
+                ${van.price}/ <br /> day
               </p>
             </div>
             <m.button
