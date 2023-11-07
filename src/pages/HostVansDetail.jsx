@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { getVanData } from '../VanData';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, NavLink, Outlet } from 'react-router-dom';
 import { motion as m, spring } from 'framer-motion';
 
 export default function HostVansDetail() {
@@ -18,11 +18,11 @@ export default function HostVansDetail() {
   return (
     <>
       <div>
-        <Link to={`..`} relative="path">
+        <NavLink to={`..`} relative="path">
           <span className="block my-4 underline underline-offset-4">
             Back to all Vans
           </span>
-        </Link>
+        </NavLink>
         <div className="md:flex items-center gap-4 mb-[59px]">
           <div>
             <m.img
@@ -46,15 +46,37 @@ export default function HostVansDetail() {
           </div>
           <div className="my-4 md:mx-4">
             <nav>
-              <ul className="flex ga-4">
+              <ul className="flex gap-6 mb-4">
                 <li>
-                  <Link to={`.`}>Details</Link>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? 'underline underline-offset-2' : null
+                    }
+                    end
+                    to={`.`}
+                  >
+                    Details
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to={`pricing`}>Pricing</Link>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? 'underline underline-offset-2' : null
+                    }
+                    to={`pricing`}
+                  >
+                    Pricing
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to={`photos`}>Photos</Link>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? 'underline underline-offset-2' : null
+                    }
+                    to={`photos`}
+                  >
+                    Photos
+                  </NavLink>
                 </li>
               </ul>
             </nav>
