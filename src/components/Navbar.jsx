@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 
@@ -59,16 +59,44 @@ export default function Navbar() {
           className={`flex flex-col gap-8 text-2xl md:flex-row md:text-lg  md:text-black`}
         >
           <li>
-            <Link to={`host`}>Host</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'underline underline-offset-2 font-bold' : null
+              }
+              to={`host`}
+            >
+              Host
+            </NavLink>
           </li>
           <li>
-            <Link to={`/`}>Home</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'underline underline-offset-2 font-bold' : null
+              }
+              to={`/`}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to={`about`}>About</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'underline underline-offset-2 font-bold' : null
+              }
+              to={`about`}
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to={`vans`}>Vans</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'underline underline-offset-2 font-bold' : null
+              }
+              to={`vans`}
+            >
+              Vans
+            </NavLink>
           </li>
         </ul>
       </nav>
