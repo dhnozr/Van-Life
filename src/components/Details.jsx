@@ -7,11 +7,15 @@ export default function Details() {
   return (
     <div>
       <div className="flex gap-2">
-        <h4>Name:</h4>
+        <h4 className="font-bold">Name:</h4>
         <span>{data.name}</span>
       </div>
+      <div className="flex items-center gap-2">
+        <h4 className="font-bold">Category:</h4>
+        <span>{data.type}</span>
+      </div>
       <div className="flex gap-2">
-        <h4>Description:</h4>
+        <h4 className="font-bold">Description:</h4>
         <span>{data.description}</span>
       </div>
     </div>
