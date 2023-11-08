@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { getVanData } from '../VanData';
 import { useParams, NavLink, Outlet } from 'react-router-dom';
-import { motion as m, spring } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 
 export default function HostVansDetail() {
   const [van, setVan] = useState({});
@@ -23,7 +23,7 @@ export default function HostVansDetail() {
             Back to all Vans
           </span>
         </NavLink>
-        <div className="md:flex items-center gap-4 mb-[59px]">
+        <div className="md:flex  gap-4 mb-[59px]">
           <div>
             <m.img
               initial={{
@@ -39,14 +39,14 @@ export default function HostVansDetail() {
                 delay: 0.3,
                 stiffness: 30,
               }}
-              className="md:w-full   md:object-contain "
+              className="md:min-w-[500px] md:max-w-[500px]   md:object-contain "
               src={van?.imageUrl}
               alt=""
             />
           </div>
           <div className="my-4 md:mx-4">
-            <nav>
-              <ul className="flex gap-6 mb-4">
+            <nav className="pb-4">
+              <ul className="flex gap-6">
                 <li>
                   <NavLink
                     className={({ isActive }) =>
