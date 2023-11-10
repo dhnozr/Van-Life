@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getVanData } from '../VanData';
-import { useParams, Link, useLocation } from 'react-router-dom';
+import { useParams, Link, useLocation, useLoaderData } from 'react-router-dom';
 import { motion as m, spring } from 'framer-motion';
+
+export function loader({ params }) {
+  return getVanData(params.id);
+}
 
 export default function VanDetailPage() {
   const location = useLocation();
   console.log(location);
   const [van, setVan] = useState({});
   const { id } = useParams();
+  const data = useLoaderData();
+  console.log(data);
 
   useEffect(() => {
     const selectedVan = getVanData().find(van => van.id === id);
