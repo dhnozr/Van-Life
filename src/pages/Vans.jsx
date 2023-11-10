@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { getVanData } from '../VanData';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom';
 import { motion as m } from 'framer-motion';
+
+export function loader() {
+  return getVanData();
+}
 
 export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get('type');
-  const [van, setVan] = useState(getVanData());
+  const van = useLoaderData();
 
   const displayedVans = typeFilter
     ? van.filter(van => van.type === typeFilter)
