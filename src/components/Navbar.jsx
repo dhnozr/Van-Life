@@ -98,6 +98,16 @@ export default function Navbar() {
               Vans
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'underline underline-offset-2 font-bold' : null
+              }
+              to={`login`}
+            >
+              Login
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
