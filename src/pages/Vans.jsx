@@ -63,7 +63,13 @@ export default function Vans() {
           {displayedVans?.map(van => (
             <div key={van.id}>
               <div>
-                <Link to={`${van.id}`}>
+                <Link
+                  to={`${van.id}`}
+                  state={{
+                    search: `?${searchParams.toString()}`,
+                    type: typeFilter,
+                  }}
+                >
                   <m.img
                     initial={{
                       opacity: 0,
