@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { getVanData } from '../VanData';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { motion as m } from 'framer-motion';
 
 export default function Vans() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get('type');
   const [van, setVan] = useState(getVanData());
+
+  const displayedVans = typeFilter
+    ? van.filter(van => van.type === typeFilter)
+    : van;
 
   return (
     <>
@@ -15,7 +21,7 @@ export default function Vans() {
           <button className="bg-[#FFEAD0] px-4 py-1 rounded-sm">Luxury</button>
         </div>
         <div className="grid grid-cols-1  gap-4 items-center mb-4 sm:grid-cols-2 md:grid-cols-3  ">
-          {van.map(van => (
+          {displayedVans?.map(van => (
             <div key={van.id}>
               <div>
                 <Link to={`/vans/${van.id}`}>
