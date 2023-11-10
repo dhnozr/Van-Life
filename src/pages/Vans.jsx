@@ -12,19 +12,58 @@ export default function Vans() {
     ? van.filter(van => van.type === typeFilter)
     : van;
 
+  const updateSearchParams = (key, value) => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    if (value === null) {
+      newSearchParams.delete(key);
+    } else {
+      newSearchParams.set(key, value);
+    }
+    setSearchParams(newSearchParams);
+  };
+
   return (
     <>
       <div>
-        <div className="flex gap-2 my-4">
-          <button className="bg-[#FFEAD0] px-4 py-1 rounded-sm">Simple</button>
-          <button className="bg-[#FFEAD0] px-4 py-1 rounded-sm">Rugged</button>
-          <button className="bg-[#FFEAD0] px-4 py-1 rounded-sm">Luxury</button>
+        <div className="flex gap-2 my-4 flex-wrap">
+          <button
+            onClick={() => updateSearchParams('type', 'simple')}
+            className={`bg-[#FFEAD0] px-4 py-1 rounded-md ${
+              typeFilter === 'simple' ? 'bg-black text-white' : null
+            }`}
+          >
+            Simple
+          </button>
+          <button
+            onClick={() => updateSearchParams('type', 'rugged')}
+            className={`bg-[#FFEAD0] px-4 py-1 rounded-md ${
+              typeFilter === 'rugged' ? 'bg-black text-white' : null
+            }`}
+          >
+            Rugged
+          </button>
+          <button
+            onClick={() => updateSearchParams('type', 'luxury')}
+            className={`bg-[#FFEAD0] px-4 py-1 rounded-md ${
+              typeFilter === 'luxury' ? 'bg-black text-white' : null
+            }`}
+          >
+            Luxury
+          </button>
+          {typeFilter && (
+            <button
+              onClick={() => updateSearchParams('type', null)}
+              className="underline underline-offset-2 text-xs ml-auto sm:ml-6"
+            >
+              Clear filter
+            </button>
+          )}
         </div>
         <div className="grid grid-cols-1  gap-4 items-center mb-4 sm:grid-cols-2 md:grid-cols-3  ">
           {displayedVans?.map(van => (
             <div key={van.id}>
               <div>
-                <Link to={`/vans/${van.id}`}>
+                <Link to={`${van.id}`}>
                   <m.img
                     initial={{
                       opacity: 0,
