@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getVanData } from '../VanData';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion as m, spring } from 'framer-motion';
 
 export default function VanDetailPage() {
+  const location = useLocation();
+  console.log(location);
   const [van, setVan] = useState({});
   const { id } = useParams();
 
@@ -15,14 +17,16 @@ export default function VanDetailPage() {
       setVan(selectedVan);
     }
   }, [id]);
-  console.log(van);
+
+  const backLink = `${location.state?.search || null}`;
+  const vanType = `${location.state?.type || 'all'}`;
 
   return (
     <>
       <div>
-        <Link to={`..`} relative="path">
+        <Link to={`..${backLink}`} relative="path">
           <span className="block my-4 underline underline-offset-4">
-            Back to all Vans
+            {`Back to ${vanType} Vans`}
           </span>
         </Link>
         <div className="md:flex items-center gap-4 mb-[59px]">
